@@ -59,7 +59,7 @@ def mostrar_tabla(df):
     df_v.columns = ["Fecha", "Hora", "Estado", "Partido", "Fase", "Estadio"]
     df_v["Fecha"] = df_v["Fecha"].dt.strftime("%d/%m/%Y")
     
-    st.dataframe(df_v, use_container_width=True, hide_index=True, column_config={
+    st.dataframe(df_v, width='stretch', hide_index=True, column_config={
         "Estado": st.column_config.SelectboxColumn("Estado", options=["Finalizado", "En juego", "Pendiente"])
     })
 
